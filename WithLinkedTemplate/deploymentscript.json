@@ -1,0 +1,41 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.1.0",
+    "parameters": {
+      "location": {
+        "type": "string",
+        "defaultValue": "westus2",
+        "metadata":{
+          "description": "Specify the location for the resources."
+        }
+      },
+      "storageAccountType": {
+        "type": "string",
+        "defaultValue": "Standard_LRS",
+        "metadata":{
+          "description": "Specify the storage account type."
+        }
+      }
+    },
+    "resources": [
+      {
+        "type": "Microsoft.Resources/deployments",
+        "apiVersion": "2020-06-01",
+        "name": "createStorage",
+        "properties": {
+          "mode": "Incremental",
+          "templateLink": {
+            "id": "/subscriptions/3305023a-40a7-4520-8e81-7f3e00a8ce72/resourceGroups/templateSpecRG/providers/Microsoft.Resources/templateSpecs/webSpec/versions/1.0.0.0"
+          },
+          "parameters": {
+            "storageAccountType": {
+              "value": "[parameters('storageAccountType')]"
+            },
+            "location": {
+              "value": "[parameters('location')]"
+            }
+          }
+        }
+      }
+    ]
+  }
