@@ -3,4 +3,4 @@ version: 1.0
 description: This template uses a Linked Template.
 engine:  
   type: ARM
-  entryPoint: azuredeploy.json
+  templatePath: azuredeploy.json

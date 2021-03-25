@@ -3,4 +3,4 @@ version: 1.0
 description: This template creates an Azure Web App without a data store.
 engine:  
   type: ARM
-  entryPoint: azuredeploy.json
+  templatePath: azuredeploy.json

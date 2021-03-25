@@ -3,4 +3,4 @@ version: 1.0
 description: A secure 5 node, single nodetype Service fabric Cluster.
 engine:  
   type: ARM
-  entryPoint: azuredeploy.json
+  templatePath: azuredeploy.json
